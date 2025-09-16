@@ -47,7 +47,7 @@ pipeline {
                             git config user.name "mohdoumair"
                             BUILD_NUMBER=${BUILD_NUMBER}
                             echo $BUILD_NUMBER
-                            sed -i "s#image:.*#image: 545009827818.dkr.ecr.ap-south-1.amazonaws.com/frontend:$BUILD_NUMBER#g" backend-deployment.yaml
+                            sed -i "s#image:.*#image: 339712945282.dkr.ecr.us-east-1.amazonaws.com/backend:$BUILD_NUMBER#g" backend-deployment.yaml
                             git add .
                             git commit -m "Update deployment Image to version \${BUILD_NUMBER}"
                             git push https://${git_token}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
